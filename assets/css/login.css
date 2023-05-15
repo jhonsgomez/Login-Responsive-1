@@ -1,0 +1,331 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    --hue: 240;
+    --first-color: hsl(var(--hue), 16%, 18%);
+    --first-color-alt: hsl(var(--hue), 16%, 12%);
+    --title-color: hsl(var(--hue), 8%, 15%);
+    --text-color: hsl(var(--hue), 8%, 35%);
+    --body-color: hsl(var(--hue), 100%, 99%);
+    --container-color: #FFF;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --big-font-size: 1.5rem;
+    --normal-font-size: .938rem;
+
+    /*========== z index ==========*/
+    --z-modal: 1000;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 1.75rem;
+        --normal-font-size: 1rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+    position: relative;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== MODAL ===============*/
+.container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.modal {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.modal__button {
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #FFF;
+    padding: .7rem 1.25rem;
+    border-radius: .5rem;
+    transition: .3s;
+}
+
+.modal__button-register {
+    margin-top: .8rem;
+}
+
+.modal__button:hover {
+    background-color: var(--first-color-alt);
+}
+
+.modal__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsla(var(--hue), 18%, 75%, .8);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: all .3s;
+    z-index: var(--z-modal);
+    visibility: hidden;
+    opacity: 0;
+
+    /*=== Effect 3 ===*/
+    /* perspective: 1000px; */
+}
+
+.modal__content {
+    position: relative;
+    background-color: var(--container-color);
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    border-radius: 1rem 1rem 0 0;
+    transition: all .3s;
+
+    /*=== Effect 1 ===*/
+    transform: translateY(10%);
+
+    /*=== Effect 2 ===*/
+    /* transform: scale(.5) translateY(10%); */
+
+    /*=== Effect 3 ===*/
+    /* transform: rotateX(65deg) scale(.75) translateY(10%);
+  transform-origin: 50% 100%; */
+}
+
+.modal__close {
+    display: inline-flex;
+    background-color: var(--first-color);
+    border-radius: .25rem;
+    color: #FFF;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+}
+
+.modal__title {
+    font-size: var(--big-font-size);
+    color: var(--title-color);
+    font-weight: 500;
+}
+
+.modal__button-width {
+    width: 90%;
+}
+
+.modal__button-link {
+    display: block;
+    margin: 1rem auto 0;
+    background-color: transparent;
+    color: var(--first-color);
+    font-weight: 500;
+}
+
+/* Show modal */
+.show-modal {
+    visibility: visible;
+    opacity: 1;
+}
+
+.show-modal .modal__content {
+    /*=== Effect 1 ===*/
+    transform: translateY(0);
+
+    /*=== Effect 2 ===*/
+    /* transform: scale(1) translateY(0); */
+
+    /*=== Effect 3 ===*/
+    /* transform: rotateX(0) scale(1) translateY(0); */
+}
+
+/*=============== LOGIN FORM ===============*/
+
+.form__container h1 {
+    padding-top: 20px;
+}
+
+.form__container form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.form__container form .txt__field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt__field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt__field-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+}
+
+.txt__email-register {
+    margin: -.1rem 0 !important;
+}
+
+.txt__field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt__field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--first-color-alt);
+    transition: .5s;
+}
+
+.line__span-correct::before {
+    background: rgb(0, 175, 0) !important;
+}
+
+.line__span-error::before {
+    background: red !important;
+}
+
+.txt__field input:focus~label,
+.txt__field input:valid~label {
+    top: -9px;
+    color: #666666;
+}
+
+.txt__field input:focus~span::before,
+.txt__field input:valid~span::before {
+    width: 100%;
+}
+
+.txt__password {
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+}
+
+.txt__password:hover {
+    text-decoration: underline;
+}
+
+.form__container-register form {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.txt__field-width {
+    width: 100% !important;
+}
+
+.form__container-register .txt__field {
+    width: 45%;
+}
+
+.form__container input[type="text"],
+input[type="password"] {
+    color: #a6a6a6;
+}
+
+.form__container input[type="submit"] {
+    border: 1px solid;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    outline: none;
+}
+
+.form__container input[type="submit"]:hover {
+    border-color: var(--first-color);
+    transition: .5s;
+}
+
+.form__container .signup__link {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+    cursor: pointer;
+}
+
+.form__container .signup__link a {
+    color: var(--first-color);
+    text-decoration: none;
+}
+
+.form__container .signup__link a:hover {
+    text-decoration: underline;
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media screen and (min-width: 576px) {
+    .modal__content {
+        margin: auto;
+        width: 400px;
+        border-radius: 1.25rem;
+    }
+
+    .modal__content-register {
+        width: 480px;
+    }
+}
+
+@media screen and (max-width: 373px) {
+    .form__icon {
+        display: none;
+    }
+}

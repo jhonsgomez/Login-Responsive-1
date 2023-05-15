@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--=============== CSS PERSONALIZADO ===============-->
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>Modal - Login</title>
+</head>
+
+<body>
+    <section class="modal container">
+        <button class="modal__button" id="open-modal-login">Open Modal</button>
+        <!--=============== MODAL-LOGIN ===============-->
+        <div class="modal__container" id="modal-container-login">
+            <div class="modal__content">
+                <div class="modal__close close-modal" title="Close">
+                    <i class='bx bx-x'></i>
+                </div>
+                <div class="form__container">
+                    <h1 class="modal__title">Iniciar Sesión</h1>
+                    <form method="post" action="" id="form-login">
+                        <div class="txt__field">
+                            <input type="text" id="email" name="email" required>
+                            <span id="line__span-email_login"></span>
+                            <label><i class='bx bx-mail-send form__icon'></i>&nbsp;Correo Electronico</label>
+                        </div>
+                        <div class="txt__field">
+                            <input type="password" name="password" required>
+                            <span id="line__span-password_login"></span>
+                            <label><i class='bx bx-lock-alt form__icon'></i>&nbsp;Contraseña</label>
+                        </div>
+                        <div class="txt__password">Olvido su contraseña?</div>
+                        <input class="modal__button modal__button-width" type="submit" value="Iniciar Sesión">
+                        <div class="signup__link">
+                            ¿No tienes una cuenta? <a id="open-modal-register">Registrate gratis</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--=============== MODAL-REGISTER ===============-->
+        <div class="modal__container" id="modal-container-register">
+            <div class="modal__content modal__content-register">
+                <div class="modal__close close-modal" title="Close">
+                    <i class='bx bx-x'></i>
+                </div>
+                <div class="form__container form__container-register">
+                    <h1 class="modal__title">Registrarse</h1>
+                    <form method="post" action="" id="form-register">
+                        <div class="txt__field-group">
+                            <div class="txt__field">
+                                <input type="text" id="name" placeholder="" name="name" required>
+                                <span id="line__span-name"></span>
+                                <label><i class='bx bx-user form__icon'></i>&nbsp;Nombres</label>
+                            </div>
+                            <div class="txt__field">
+                                <input type="text" id="lastname" placeholder="" name="lastname" required>
+                                <span id="line__span-lastname"></span>
+                                <label><i class='bx bx-user form__icon'></i>&nbsp;Apellidos</label>
+                            </div>
+                        </div>
+
+                        <div class="txt__field txt__field-width txt__email-register">
+                            <input type="text" name="email" placeholder="" required>
+                            <span id="line__span-email"></span>
+                            <label><i class='bx bx-mail-send form__icon'></i>&nbsp;Correo Electronico</label>
+                        </div>
+
+                        <div class="txt__field-group">
+                            <div class="txt__field">
+                                <input type="password" name="password" placeholder="" required>
+                                <span id="line__span-password"></span>
+                                <label><i class='bx bx-lock-alt form__icon'></i>&nbsp;Contraseña</label>
+                            </div>
+                            <div class="txt__field">
+                                <input type="text" name="phone" placeholder="" required>
+                                <span id="line__span-phone"></span>
+                                <label><i class='bx bx-phone form__icon'></i>&nbsp;Celular</label>
+                            </div>
+                        </div>
+
+                        <input class="modal__button modal__button-width modal__button-register" type="submit"
+                            value="Crear Cuenta">
+                        <div class="signup__link">
+                            ¿Ya tienes una cuenta? <br><a id="open-modal-login-reverse">Inicia Sesión</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/login.js"></script>
+</body>
+
+</html>
